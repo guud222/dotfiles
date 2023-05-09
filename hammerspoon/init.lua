@@ -1,12 +1,8 @@
--- Get an array of all open windows
-local allWindows = hs.window.allWindows()
+hs.hotkey.bind({ "cmd", "alt", "ctrl" }, "R", function()
+	hs.reload()
+end)
+hs.alert.show("Config loaded")
 
--- Loop through the array of windows and print information about each one
-for i, win in ipairs(allWindows) do
-	print("Window " .. i .. ":")
-	print("  Application: " .. win:application():name())
-	print("  Title: " .. win:title())
-	print("  ID: " .. win:id())
-	print("  Frame: " .. hs.inspect(win:frame()))
-	print("  Is visible? " .. tostring(win:isVisible()))
-end
+require("winbar").setup()
+local spaceWatch = hs.spaces.watcher.new(require("winbar").drawing)
+spaceWatch:start()

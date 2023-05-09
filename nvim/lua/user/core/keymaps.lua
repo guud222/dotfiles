@@ -30,7 +30,7 @@ keymap.set("n", "<leader>tp", ":tabprevious<CR>")
 -- plugins keymap
 
 -- nvim-tree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+keymap.set("n", "<leader>es", ":NvimTreeToggle<CR>")
 
 -- telescope
 keymap.set("n", "<leader>sf", ":Telescope find_files<CR>", { desc = "[S]earch [F]iles", silent = true })
